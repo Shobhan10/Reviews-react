@@ -8,9 +8,15 @@ const Review = () => {
 
   const randomReview = () => {
     let randomIndex = Math.floor(Math.random() * reviews.length);
+
     if (randomIndex === index) {
-      randomIndex = index + 1;
+      if (randomIndex === reviews.length - 1) {
+        randomIndex = index - 1;
+      } else {
+        randomIndex = index + 1;
+      }
     }
+
     setIndex(randomIndex);
   };
 
